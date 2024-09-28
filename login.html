@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Hotel Bliss</title>
+    <style>
+    /* General Styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+
+    body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #ff9900, #ff6600);
+    }
+
+    .login-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .login-box {
+        background: #fff;
+        padding: 2.5rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        max-width: 400px;
+        width: 100%;
+        text-align: center;
+        animation: slideDown 1.2s ease-in-out;
+        transition: transform 0.4s;
+    }
+
+    .login-box:hover {
+        transform: scale(1.05);
+    }
+
+    .login-box h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: #333;
+        animation: fadeInText 1.5s ease-in-out;
+    }
+
+    /* Input Styles */
+    .input-box {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    .input-box input {
+        width: 100%;
+        padding: 1rem;
+        background: #f1f1f1;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        font-size: 1.1rem;
+        color: #333;
+        transition: 0.3s;
+    }
+
+    .input-box input:focus {
+        background: #fff;
+        border: 2px solid #ff6600;
+    }
+
+    .input-box label {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        font-size: 1rem;
+        color: #999;
+        transition: 0.3s;
+        pointer-events: none;
+    }
+
+    .input-box input:focus + label,
+    .input-box input:not(:placeholder-shown) + label {
+        top: -10px;
+        left: 10px;
+        font-size: 0.85rem;
+        color: #ff6600;
+    }
+
+    /* Remember Me Checkbox */
+    .remember-me {
+        margin-bottom: 1.5rem;
+        text-align: left;
+    }
+
+    .remember-me input {
+        margin-right: 0.5rem;
+    }
+
+    .remember-me label {
+        font-size: 1rem;
+        color: #333;
+    }
+
+    /* Login Button */
+    .login-btn {
+        width: 100%;
+        padding: 1rem;
+        background: #ff6600;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.3rem;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .login-btn:hover {
+        background: #e65c00;
+        transform: translateY(-5px);
+    }
+
+    /* Register Link */
+    .register-link {
+        margin-top: 1.5rem;
+        font-size: 1rem;
+        color: #333;
+    }
+
+    .register-link a {
+        color: #ff6600;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .register-link a:hover {
+        text-decoration: underline;
+    }
+
+    /* Animations */
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInText {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        .login-box {
+            padding: 2rem;
+            width: 90%;
+        }
+
+        .login-btn {
+            padding: 0.9rem;
+            font-size: 1.1rem;
+        }
+
+        .input-box input {
+            padding: 0.9rem;
+        }
+
+        .input-box label {
+            font-size: 0.9rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .login-box {
+            padding: 1.5rem;
+        }
+
+        .login-box h2 {
+            font-size: 2rem;
+        }
+
+        .login-btn {
+            font-size: 1rem;
+            padding: 0.7rem;
+        }
+
+        .input-box input {
+            padding: 0.8rem;
+        }
+
+        .input-box label {
+            font-size: 0.8rem;
+        }
+
+        .register-link {
+            font-size: 0.9rem;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form action="#" method="POST">
+                <div class="input-box">
+                    <input type="text" required>
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-me">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Remember Me</label>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+                <p class="register-link">Don't have an account? <a href="#">Register</a></p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
